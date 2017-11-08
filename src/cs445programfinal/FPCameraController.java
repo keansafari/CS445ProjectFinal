@@ -127,19 +127,19 @@ public class FPCameraController {
             *so on a slow computer you move just as fast as on a fast computer
             */
             //move forward
-            if (Keyboard.isKeyDown(Keyboard.KEY_W)){
+            if (Keyboard.isKeyDown(Keyboard.KEY_W) || Keyboard.isKeyDown(Keyboard.KEY_UP)){
             camera.walkForward(movementSpeed);
             }
             //move backwards
-            if (Keyboard.isKeyDown(Keyboard.KEY_S)){
+            if (Keyboard.isKeyDown(Keyboard.KEY_S) || Keyboard.isKeyDown(Keyboard.KEY_DOWN)){
             camera.walkBackwards(movementSpeed);
             }
             //strafe left 
-            if (Keyboard.isKeyDown(Keyboard.KEY_A)){
+            if (Keyboard.isKeyDown(Keyboard.KEY_A) || Keyboard.isKeyDown(Keyboard.KEY_LEFT)){
                 camera.strafeLeft(movementSpeed);
             }
             //strafe right
-            if (Keyboard.isKeyDown(Keyboard.KEY_D)){
+            if (Keyboard.isKeyDown(Keyboard.KEY_D) || Keyboard.isKeyDown(Keyboard.KEY_RIGHT)){
                 camera.strafeRight(movementSpeed);
             }
              //move up
