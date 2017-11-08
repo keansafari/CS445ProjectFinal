@@ -166,6 +166,8 @@ public class FPCameraController {
     
     private void render() {
         try{
+            
+            glEnable(GL_DEPTH_TEST);
             glBegin(GL_QUADS);
             
             // top
