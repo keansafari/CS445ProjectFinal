@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/***************************************************************
+* file: Vector3Float.java
+* author: Lenny Yang, Kean Jafari, Hanbo Ye, Christian Angelo
+* class: CS 445 – Computer Graphics
+*
+* assignment: Program Final
+* date last modified: 11/08/2017
+*
+* purpose: This class creates a 3 vector point
+****************************************************************/ 
 package cs445programfinal;
-
-/**
- *
- * @author lennyyang
- */
 
 public class Vector3Float {
     public float x, y, z;

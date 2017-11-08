@@ -1,15 +1,12 @@
 /***************************************************************
-* file: CS445Program1.java
-* author: Lenny Yang
+* file: CS445ProgramFinal.java
+* author: Lenny Yang, Kean Jafari, Hanbo Ye, Christian Angelo
 * class: CS 445 – Computer Graphics
 *
-* assignment: Program 1
-* date last modified: 10/10/2017
+* assignment: Program Final
+* date last modified: 11/08/2017
 *
-* purpose: This program reads from a file called coordinates.txt
-* and creates a window that displays the options of the given values 
-* for Lines, Ellipses, and Circles
-*
+* purpose: This program creates a 3D world similar to Minecraft
 ****************************************************************/ 
 package cs445programfinal;
 
@@ -22,6 +19,9 @@ public class CS445ProgramFinal {
     private FPCameraController fp = new FPCameraController(0f,0f,0f);
     private DisplayMode displayMode;
     
+    // method: start
+    // purpose:  method to create the window, initalize the GL and render the 
+    //graphics in this order    
     public void start() {
         try {
             createWindow();
@@ -32,6 +32,9 @@ public class CS445ProgramFinal {
         }
     }
     
+    // method: createWindow
+    // purpose:  method to set the display window not fullscreen, set dimensions
+    // and set the title of the window as well as creating it    
     private void createWindow() throws Exception{
         Display.setFullscreen(false);
         DisplayMode d[] =
@@ -47,6 +50,8 @@ public class CS445ProgramFinal {
         Display.create();
     }
     
+    // method: initGL
+    // purpose:  method to initialize the GL options 
     private void initGL() {
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glMatrixMode(GL_PROJECTION);
@@ -57,6 +62,8 @@ public class CS445ProgramFinal {
         glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
     }
     
+    // method: main
+    // purpose: takes in user input from text file and renders in openGL window  
     public static void main(String[] args) {
         CS445ProgramFinal basic = new CS445ProgramFinal();
         basic.start();
