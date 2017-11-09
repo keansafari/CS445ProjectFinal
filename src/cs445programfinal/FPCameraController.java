@@ -10,6 +10,8 @@
 ****************************************************************/ 
 package cs445programfinal;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -120,7 +122,7 @@ public class FPCameraController {
         float lastTime = 0.0f; // when the last frame was
         long time = 0;
         float mouseSensitivity = 0.09f;
-        float movementSpeed = 0.05f;
+        float movementSpeed = 0.5f;
         //hide the mouse
         Mouse.setGrabbed(true);
         while (!Display.isCloseRequested() && !Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)){
@@ -186,55 +188,11 @@ public class FPCameraController {
         try{
             
             glEnable(GL_DEPTH_TEST);
-            glBegin(GL_QUADS);
-            
-            // top
-            glColor3f(0f, 0.5f, 0.5f);
-            glNormal3f(0.0f, 1.0f, 0.0f);
-            glVertex3f(-1f, 1f, 1f);
-            glVertex3f(1f, 1f, 1f);
-            glVertex3f(1f, 1f, -1f);
-            glVertex3f(-1f, 1f, -1f);
 
-            // front
-            glColor3f(1f, 5.0f, 0.0f);
-            glNormal3f(0.0f, 0.0f, 1.0f);
-            glVertex3f(1f, -1f, 1f);
-            glVertex3f(1f, 1f, 1f);
-            glVertex3f(-1f, 1f, 1f);
-            glVertex3f(-1f, -1f, 1f);
-
-            // right
-            glColor3f(0.5f, 0.0f, 0.5f);
-            glNormal3f(1.0f, 0.0f, 0.0f);
-            glVertex3f(1f, 1f, -1f);
-            glVertex3f(1f, 1f, 1f);
-            glVertex3f(1f, -1f, 1f);
-            glVertex3f(1f, -1f, -1f);
-            
-            //left
-            glColor3f(0.0f, 0.0f, 1f);
-            glNormal3f(-1.0f, 0.0f, 0.0f);
-            glVertex3f(-1f, -1f, 1f);
-            glVertex3f(-1f, 1f, 1f);
-            glVertex3f(-1f, 1f, -1f);
-            glVertex3f(-1f, -1f, -1f);
-            
-            // bottom
-            glColor3f(1f, 1f, 1f);
-            glNormal3f(0.0f, -1.0f, 0.0f);
-            glVertex3f(-1f, -1f, 1f);
-            glVertex3f(1f, -1f, 1f);
-            glVertex3f(1f, -1f, -1f);
-            glVertex3f(-1f, -1f, -1f);
-            
-            //back
-            glColor3f(1.0f, 0f, 0f);
-            glNormal3f(0.0f, 0.0f, -1.0f);
-            glVertex3f(1f, 1f, -1f);
-            glVertex3f(1f, -1f, -1f);
-            glVertex3f(-1f, -1f, -1f);
-            glVertex3f(-1f, 1f, -1f);
+            // initial set
+            Cube cube = new Cube(0,0,0);
+            //create a chunk of cubes
+            cube.renderChunk(30);
             
             glEnd();
         }
